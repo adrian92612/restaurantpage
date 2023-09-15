@@ -15,8 +15,8 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 2em;
-  border: 1px solid red;
-  padding: 0 30px;
+  /* border: 1px solid red; */
+  padding: 0 20px;
 }
 
 .logo {
@@ -26,7 +26,10 @@ header {
 
 nav {
   height: 50px;
-  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 1px solid red; */
 }
 
 nav > img {
@@ -36,12 +39,26 @@ nav > img {
 
 .nav-btn {
   display: none;
-  width: 100px;
   height: 2em;
-  border: 1px solid black;
+  font-size: 1.1em;
   background-color: transparent;
   text-decoration: none;
+  border: none;
+  /* border: 1px solid red; */
 }
 .nav-btn:hover {
-  border-bottom: 1px solid salmon;
+  color: red;
+}
+
+@media (width >= 640px) {
+  nav {
+    flex: 1;
+    max-width: 600px;
+  }
+  nav > img {
+    display: none;
+  }
+  .nav-btn {
+    display: inline;
+  }
 }
