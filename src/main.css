@@ -8,12 +8,14 @@
   max-width: 1280px;
   width: 96%;
   margin: 0 auto;
+  color: antiquewhite;
+  background-color: rgb(30, 30, 30);
 }
 
 /* HEADER */
 
 header {
-  height: 10dvh;
+  height: 120px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -78,10 +80,18 @@ nav > img {
 }
 
 .desc-section {
-  height: 50dvh;
   width: 100%;
-  padding: 5dvh 5%;
+  padding: 20px 5%;
   gap: 1rem;
   display: flex;
   flex-flow: column;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  height: 80px;
+  border: 1px solid black;
 }

@@ -10,7 +10,7 @@ function createSteakImg() {
 }
 
 function createDescription() {
-  const descSection = document.createElement("div");
+  const descSection = document.createElement("section");
   descSection.className = "desc-section";
 
   const slogan = document.createElement("h1");
@@ -24,6 +24,10 @@ function createDescription() {
   descSection.appendChild(description);
   return descSection;
 }
+
+// function createReviewSection(){
+
+// }
 
 export default function createHome() {
   const homePage = document.createElement("main");
