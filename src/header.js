@@ -11,6 +11,13 @@ export default function createHeader() {
   return header;
 }
 
+function createBtn(text, className) {
+  const btn = document.createElement("button");
+  btn.innerText = text;
+  btn.className = className;
+  return btn;
+}
+
 function createLogo() {
   const logoSpace = document.createElement("div");
   logoSpace.className = "logo";
@@ -19,25 +26,35 @@ function createLogo() {
   return logoSpace;
 }
 
+function createNavPopUp() {
+  const popUpNav = document.createElement("div");
+  popUpNav.classList = "nav-pop-up";
+
+  const homeBtn2 = createBtn("Home", "nav-btn2");
+  const menuBtn2 = createBtn("Menu", "nav-btn2");
+  const contactUsBtn2 = createBtn("Contact Us", "nav-btn2");
+  popUpNav.appendChild(homeBtn2);
+  popUpNav.appendChild(menuBtn2);
+  popUpNav.appendChild(contactUsBtn2);
+
+  return popUpNav;
+}
+
 function createNavBar() {
   const navSpace = document.createElement("nav");
 
-  const homeBtn = document.createElement("button");
-  homeBtn.innerText = "Home";
-  homeBtn.className = "nav-btn";
-  const menuBtn = document.createElement("button");
-  menuBtn.innerText = "Menu";
-  menuBtn.className = "nav-btn";
-  const contactUsBtn = document.createElement("button");
-  contactUsBtn.innerText = "Contact Us";
-  contactUsBtn.className = "nav-btn";
+  const homeBtn = createBtn("Home", "nav-btn");
+  const menuBtn = createBtn("Menu", "nav-btn");
+  const contactUsBtn = createBtn("Contact Us", "nav-btn");
 
   const navBtnIcon = document.createElement("img");
   navBtnIcon.src = navIcon;
+  navBtnIcon.className = "nav-icon";
 
   navSpace.appendChild(homeBtn);
   navSpace.appendChild(menuBtn);
   navSpace.appendChild(contactUsBtn);
   navSpace.appendChild(navBtnIcon);
+  navSpace.appendChild(createNavPopUp());
   return navSpace;
 }

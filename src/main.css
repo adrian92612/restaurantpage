@@ -2,20 +2,29 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  color: blanchedalmond;
 }
 
 #root {
-  max-width: 1280px;
+  max-width: 1920px;
   width: 96%;
   margin: 0 auto;
-  color: antiquewhite;
+
   background-color: rgb(30, 30, 30);
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 /* HEADER */
 
 header {
-  height: 120px;
+  height: 100px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -42,6 +51,7 @@ nav {
 nav > img {
   height: auto;
   width: 50px;
+  position: relative;
 }
 
 .nav-btn {
@@ -57,6 +67,25 @@ nav > img {
   color: red;
 }
 
+.nav-pop-up {
+  position: absolute;
+  top: 5%;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.nav-btn2 {
+  height: 2em;
+  font-size: 1.1em;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+}
+
 @media (width >= 640px) {
   nav {
     flex: 1;
@@ -69,19 +98,40 @@ nav > img {
     display: inline;
   }
 }
+/* -------------------- */
+/*      HomePage        */
+/* -------------------- */
 
-/* Home Page */
+.img-container {
+  height: calc(90dvh - 100px);
+  width: 90%;
+  margin: 0 auto;
+}
 
-.home-img {
-  height: 100dvh;
+.img-container img {
+  height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
 
+.fade-effect {
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .desc-section {
-  width: 100%;
-  padding: 20px 5%;
+  width: 90%;
+  padding: 20px 0;
+  margin: 0 auto;
   gap: 1rem;
   display: flex;
   flex-flow: column;
@@ -89,9 +139,19 @@ nav > img {
   letter-spacing: 1px;
 }
 
+.review-section {
+  height: 50dvh;
+  width: 90%;
+  margin: 0 auto;
+  border: 3px solid #600;
+}
+
 /* Footer */
 footer {
   width: 100%;
   height: 80px;
   border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

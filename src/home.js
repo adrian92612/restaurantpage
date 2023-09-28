@@ -1,12 +1,36 @@
 import steakImg from "./assets/steak.jpg";
 import steakImg2 from "./assets/steak2.jpg";
 
-function createSteakImg() {
-  const homeImg = document.createElement("img");
-  homeImg.src = steakImg;
-  homeImg.className = "home-img";
+// const rotate = setInterval((homeImg) => {
+//   homeImg.src = imgArr[arr];
+//   homeImg.classList.add("fade-effect");
+//   console.log(arr);
+//   setTimeout(() => homeImg.classList.remove("fade-effect"), 3000);
+//   arr++;
+//   if (arr >= imgArr.length) arr = 0;
+// }, 4000);
 
-  return homeImg;
+function createSteakImg() {
+  const imgArr = [steakImg, steakImg2];
+  const homeImg = document.createElement("img");
+  homeImg.src = imgArr[1];
+
+  // let arr = 1;
+  // setInterval(() => {
+  //   homeImg.src = imgArr[arr];
+  //   homeImg.classList.add("fade-effect");
+  //   console.log(arr);
+  //   setTimeout(() => homeImg.classList.remove("fade-effect"), 3000);
+  //   arr++;
+  //   if (arr >= imgArr.length) arr = 0;
+  // }, 4000);
+
+  const imgContainer = document.createElement("div");
+  imgContainer.className = "img-container";
+
+  imgContainer.appendChild(homeImg);
+
+  return imgContainer;
 }
 
 function createDescription() {
@@ -25,9 +49,12 @@ function createDescription() {
   return descSection;
 }
 
-// function createReviewSection(){
+function createReviewSection() {
+  const reviewSec = document.createElement("section");
+  reviewSec.className = "review-section";
 
-// }
+  return reviewSec;
+}
 
 export default function createHome() {
   const homePage = document.createElement("main");
@@ -35,5 +62,6 @@ export default function createHome() {
 
   homePage.appendChild(createSteakImg());
   homePage.appendChild(createDescription());
+  homePage.appendChild(createReviewSection());
   return homePage;
 }

@@ -4,7 +4,19 @@ import createHome from "./home";
 import createFooter from "./footer";
 
 const root = document.getElementById("root");
+const mainContent = document.createElement("main");
 
-root.appendChild(createHeader());
-root.appendChild(createHome());
-root.appendChild(createFooter());
+function popUpNav() {}
+
+function addListeners() {
+  const navIcon = document.querySelector(".nav-icon");
+  navIcon.addEventListener("click", popUpNav());
+}
+
+(function init() {
+  root.appendChild(createHeader());
+  root.appendChild(mainContent.appendChild(createHome()));
+  root.appendChild(createFooter());
+
+  addListeners();
+})();
